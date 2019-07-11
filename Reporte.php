@@ -79,6 +79,209 @@
                         </div>
             </div>
         </div>
+        <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Movimientos</h5>
+                                <div class="pull-right">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-xs btn-white active">Mensual</button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="row">
+                                <div class="col-lg-6">
+                                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Ingresos </h5>
+                        
+                    </div>
+                    <div class="ibox-content">
+
+                        <table class="table table-striped" style="overflow-y: scroll">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Fecha</th>
+                                <th>Descripcion</th>
+                                <th>Monto</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><span class="date">03/07/2019</span></td>
+                                <td>Samantha</td>
+                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><span class="date">03/07/2019</span></td>
+                                <td>Jacob</td>
+                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><span class="date">03/07/2019</span></td>
+                                <td>Damien</td>
+                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><span class="date">03/07/2019</span></td>
+                                <td>Damien</td>
+                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><span class="date">03/07/2019</span></td>
+                                <td>Damien</td>
+                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                                </div>
+                                <div class="col-lg-6">
+                                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Gastos </h5>
+                        
+                    </div>
+                    <div class="ibox-content">
+
+                        <table class="table table-striped" style="overflow-y: scroll">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Fecha</th>
+                                <th>Descripcion</th>
+                                <th>Monto</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><span class="date">03/07/2019</span></td>
+                                <td>Consumibles</td>
+                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><span class="date">03/07/2019</span></td>
+                                <td>Consumibles</td>
+                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><span class="date">03/07/2019</span></td>
+                                <td>Consumibles</td>
+                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><span class="date">03/07/2019</span></td>
+                                <td>Consumibles</td>
+                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><span class="date">03/07/2019</span></td>
+                                <td>Consumibles</td>
+                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                                    </div>
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Seguimiento de Proyectos</h5>
+                                <div class="pull-right">
+                                    <div class="btn-group">
+                                       
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="row">
+                                
+                                <div class="col-lg-12">
+                                <table class="table table-hover no-margins">
+                                            <thead>
+                                            <tr>
+                                                <th>Estatus</th>
+                                                <th>Fecha de Entrega</th>
+                                                <th>Responsables</th>
+                                                <th>Porcentaje</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><span class="label label-warning">Pendiente</span></td>
+                                                <td><i class="fa fa-clock-o"></i> 11:20pm</td>
+                                                <td>Samantha</td>
+                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 24% </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="label label-danger">Cancelado</span> </td>
+                                                <td><i class="fa fa-clock-o"></i> 10:40am</td>
+                                                <td>Monica</td>
+                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 66% </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="label label-warning">Pendiente</span> </td>
+                                                <td><i class="fa fa-clock-o"></i> 01:30pm</td>
+                                                <td>John</td>
+                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 54% </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="label label-warning">Pendiente</span></td>
+                                                <td><i class="fa fa-clock-o"></i> 02:20pm</td>
+                                                <td>Agnes</td>
+                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 12% </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="label label-warning">Pendiente</span> </td>
+                                                <td><i class="fa fa-clock-o"></i> 09:40pm</td>
+                                                <td>Janet</td>
+                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 22% </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="label label-primary">Terminado</span> </td>
+                                                <td><i class="fa fa-clock-o"></i> 04:10am</td>
+                                                <td>Amelia</td>
+                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 66% </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="label label-warning">Pendiente</span> </td>
+                                                <td><i class="fa fa-clock-o"></i> 12:08am</td>
+                                                <td>Damian</td>
+                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 23% </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
 </div>
 
 </div>
