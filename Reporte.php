@@ -30,7 +30,7 @@
                     <div class="col-lg-3">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <span class="label label-success pull-right">Mensualdkjdkjkd</span>
+                                <span class="label label-success pull-right">Mensual</span>
                                 <h5>Ingresos</h5>
                             </div>
                             <div class="ibox-content">
