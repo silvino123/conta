@@ -24,7 +24,7 @@
 <div id="page-wrapper" class="gray-bg">  
 <?php include 'Nav.html'; ?>  
 <div class="wrapper wrapper-content">
-    <h2> <span class="label label-info">Reporte del mes de : Julio</span></h2>
+    <h2> <span class="label label-info">Reporte del mes de : Agosto</span></h2>
     <br>
         <div class="row">
                     <div class="col-lg-3">
