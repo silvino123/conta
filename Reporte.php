@@ -1,3 +1,23 @@
+<?php 
+require("conec.php");
+
+$mesActual=date("m");
+$añoActual=date("Y");
+$NombreMes= date("F");
+$consulta=mysqli_query($con,"SELECT sum(Monto) from ingresos WHERE YEAR(Fecha)='$añoActual' AND MONTH(Fecha)='$mesActual'");
+while($row = mysqli_fetch_array($consulta)){
+        $sumaIngreso= $row['sum(Monto)'];
+}
+$consulta2=mysqli_query($con,"SELECT sum(Monto) from gastos WHERE YEAR(Fecha)='$añoActual' AND MONTH(Fecha)='$mesActual'");
+while($row2 = mysqli_fetch_array($consulta2)){
+        $sumaGasto= $row2['sum(Monto)'];
+}
+        mysqli_close($con);
+        setlocale(LC_TIME,'ES');
+        $monthNum=$mesActual;
+        $dateObj= DateTime:: createFromFormat('!m',$monthNum);
+        $monthName= strftime('%B',$dateObj-> getTimestamp());
+?>
 <!DOCTYPE html>
 <html>
 
@@ -24,7 +44,7 @@
 <div id="page-wrapper" class="gray-bg">  
 <?php include 'Nav.html'; ?>  
 <div class="wrapper wrapper-content">
-    <h2> <span class="label label-info">Reporte del mes de : Agosto</span></h2>
+    <h2> <span class="label label-info">Reporte del mes de :<?php echo $monthName ?></span></h2>
     <br>
         <div class="row">
                     <div class="col-lg-3">
@@ -34,7 +54,7 @@
                                 <h5>Ingresos</h5>
                             </div>
                             <div class="ibox-content">
-                                <h1 class="no-margins">40 886,200</h1>
+                                <h1 class="no-margins"><?php echo $sumaIngreso ?></h1>
                                 <div class="stat-percent font-bold text-success"> <i class="fas fa-hand-holding-usd"></i></div>
                                 <small>Ingresos Totales</small>
                             </div>
@@ -47,7 +67,7 @@
                                 <h5>Gastos</h5>
                             </div>
                             <div class="ibox-content">
-                                <h1 class="no-margins">275,800</h1>
+                                <h1 class="no-margins"><?php echo $sumaGasto ?></h1>
                                 <div class="stat-percent font-bold text-info"> <i class="fas fa-money-bill-wave"></i></div>
                                 <small>Gastos Totales</small>
                             </div>
@@ -104,7 +124,7 @@
 
                         <table class="table table-striped" style="overflow-y: scroll">
                             <thead>
-                            <tr>
+                            <tr style="background-color:#1c84c6;color:#fff">
                                 <th>#</th>
                                 <th>Fecha</th>
                                 <th>Descripcion</th>
@@ -112,36 +132,9 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><span class="date">03/07/2019</span></td>
-                                <td>Samantha</td>
-                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><span class="date">03/07/2019</span></td>
-                                <td>Jacob</td>
-                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><span class="date">03/07/2019</span></td>
-                                <td>Damien</td>
-                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td><span class="date">03/07/2019</span></td>
-                                <td>Damien</td>
-                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td><span class="date">03/07/2019</span></td>
-                                <td>Damien</td>
-                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
-                            </tr>
+                            <?php  
+                            require('ContenidoIngresos.php');
+                            ?>
                             </tbody>
                         </table>
                     </div>
@@ -157,7 +150,7 @@
 
                         <table class="table table-striped" style="overflow-y: scroll">
                             <thead>
-                            <tr>
+                            <tr style="background-color:#1c84c6;color:#fff">
                                 <th>#</th>
                                 <th>Fecha</th>
                                 <th>Descripcion</th>
@@ -165,36 +158,9 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><span class="date">03/07/2019</span></td>
-                                <td>Consumibles</td>
-                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><span class="date">03/07/2019</span></td>
-                                <td>Consumibles</td>
-                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><span class="date">03/07/2019</span></td>
-                                <td>Consumibles</td>
-                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td><span class="date">03/07/2019</span></td>
-                                <td>Consumibles</td>
-                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td><span class="date">03/07/2019</span></td>
-                                <td>Consumibles</td>
-                                <td class="text-navy"> <i class="fas fa-dollar-sign"></i> 45.00 </td>
-                            </tr>
+                            <?php  
+                            require('ContenidoGastos.php');
+                            ?>
                             </tbody>
                         </table>
                     </div>
