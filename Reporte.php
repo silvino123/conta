@@ -4,6 +4,7 @@ require("conec.php");
 $mesActual=date("m");
 $añoActual=date("Y");
 $NombreMes= date("F");
+$factura="Si";
 $consulta=mysqli_query($con,"SELECT sum(Monto) from ingresos WHERE YEAR(Fecha)='$añoActual' AND MONTH(Fecha)='$mesActual'");
 while($row = mysqli_fetch_array($consulta)){
         $sumaIngreso= $row['sum(Monto)'];
@@ -12,7 +13,13 @@ $consulta2=mysqli_query($con,"SELECT sum(Monto) from gastos WHERE YEAR(Fecha)='$
 while($row2 = mysqli_fetch_array($consulta2)){
         $sumaGasto= $row2['sum(Monto)'];
 }
-        mysqli_close($con);
+$sumaFacturado=mysqli_query($con,"SELECT sum(Monto) from ingresos WHERE YEAR(Fecha)='$añoActual' AND MONTH(Fecha)='$mesActual' AND Factura='$factura'");
+while($row3 = mysqli_fetch_array($sumaFacturado)){
+    $suma= $row3['sum(Monto)'];
+}
+$IvaPorPagar=$suma*0.16;
+$Ganancias=$sumaIngreso-$sumaGasto-$IvaPorPagar;
+mysqli_close($con);
         setlocale(LC_TIME,'ES');
         $monthNum=$mesActual;
         $dateObj= DateTime:: createFromFormat('!m',$monthNum);
@@ -44,7 +51,7 @@ while($row2 = mysqli_fetch_array($consulta2)){
 <div id="page-wrapper" class="gray-bg">  
 <?php include 'Nav.html'; ?>  
 <div class="wrapper wrapper-content">
-    <h2> <span class="label label-info">Reporte del mes de :<?php echo $monthName ?></span></h2>
+    <h2> <span class="label label-info">Reporte del mes de : <?php echo $monthName  ?></span></h2>
     <br>
         <div class="row">
                     <div class="col-lg-3">
@@ -54,7 +61,7 @@ while($row2 = mysqli_fetch_array($consulta2)){
                                 <h5>Ingresos</h5>
                             </div>
                             <div class="ibox-content">
-                                <h1 class="no-margins"><?php echo $sumaIngreso ?></h1>
+                                <h1 class="no-margins"><b>$ <?php echo $sumaIngreso ?></b></h1>
                                 <div class="stat-percent font-bold text-success"> <i class="fas fa-hand-holding-usd"></i></div>
                                 <small>Ingresos Totales</small>
                             </div>
@@ -67,7 +74,7 @@ while($row2 = mysqli_fetch_array($consulta2)){
                                 <h5>Gastos</h5>
                             </div>
                             <div class="ibox-content">
-                                <h1 class="no-margins"><?php echo $sumaGasto ?></h1>
+                                <h1 class="no-margins"><b>$ <?php echo $sumaGasto ?></b></h1>
                                 <div class="stat-percent font-bold text-info"> <i class="fas fa-money-bill-wave"></i></div>
                                 <small>Gastos Totales</small>
                             </div>
@@ -80,7 +87,15 @@ while($row2 = mysqli_fetch_array($consulta2)){
                                 <h5>Ganancia</h5>
                             </div>
                             <div class="ibox-content">
-                                <h1 class="no-margins">106,120</h1>
+                                 <?php
+                                 if($Ganancias<0){
+                                    echo "<h1 class='no-margins' style='color:red'><b>$ $Ganancias</b></h1>"; 
+                                 }
+                                else{
+                                    echo "<h1 class='no-margins' style='color:green'><b>$ $Ganancias<b></h1>"; 
+                                }
+                                 ?>
+                                
                                 <div class="stat-percent font-bold text-navy"> <i class="fas fa-dollar-sign"></i></div>
                                 <small>Ganancia Total</small>
                             </div>
@@ -93,7 +108,7 @@ while($row2 = mysqli_fetch_array($consulta2)){
                                 <h5>IVA por Pagar</h5>
                             </div>
                             <div class="ibox-content">
-                                <h1 class="no-margins">80,600</h1>
+                                <h1 class="no-margins"><b>$ <?php echo $IvaPorPagar  ?></b></h1>
                                 <div class="stat-percent font-bold text-danger"> <i class="fas fa-bolt"></i></div>
                                 <small>Total de iva por pagar</small>
                             </div>
@@ -128,6 +143,7 @@ while($row2 = mysqli_fetch_array($consulta2)){
                                 <th>#</th>
                                 <th>Fecha</th>
                                 <th>Descripcion</th>
+                                <th>Factura</th>
                                 <th>Monto</th>
                             </tr>
                             </thead>
@@ -154,6 +170,7 @@ while($row2 = mysqli_fetch_array($consulta2)){
                                 <th>#</th>
                                 <th>Fecha</th>
                                 <th>Descripcion</th>
+                                <th>Factura</th>
                                 <th>Monto</th>
                             </tr>
                             </thead>

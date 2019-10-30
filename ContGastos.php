@@ -10,6 +10,13 @@ $consulta=mysqli_query($con,"SELECT * from gastos");
             echo "<td>" . $row['Fecha'] .  "</td>"; 
              echo "<td>" . $row['Monto'] .  "</td>"; 
             echo "<td>" . $row['Descripcion'] .  "</td>";
+            if( $row['Factura']=="Si"){
+
+              echo "<td><i class='fas fa-check' style='color:green'></i></td>";
+           }
+           else{
+             echo "<td>" . $row['Factura'] .  "</td>";
+           }
            
             echo "<td>
                          

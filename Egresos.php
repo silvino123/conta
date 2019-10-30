@@ -18,6 +18,7 @@
     <script src="https://kit.fontawesome.com/473290e8a6.js"></script>
     <link rel="stylesheet" type="text/css" href="js/alertifyjs/css/alertify.css">
     <link rel="stylesheet" type="text/css" href="js/alertifyjs/css/themes/default.css">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
 </head>
 
 <body>
@@ -48,6 +49,7 @@
                                     <th>Fecha</th>
                                     <th >Monto</th>
                                     <th >Descripción</th>
+                                    <th >Factura</th>
                                     <th >Acciones</th>
                                 </tr>
                                 </thead>
@@ -90,7 +92,7 @@
                                                         <div class="form-group"><label>Monto</label> <input type="number" placeholder="Monto" class="form-control" id="Monto" name="Monto" required=""></div>
                                                         <div class="form-group"><label>Descripcion</label> <input type="text" placeholder="Descripcion" class="form-control" id="Descripcion" name="Descripcion" required=""></div>
                                                         <div class="form-group"><label>Fecha</label> <input type="date"  class="form-control" id="Fecha" name="Fecha" required=""></div>
-                                                                                                                                                                      
+                                                        <div class="form-group"> <label class="i-checks"> <input type="checkbox"   name="Factura" value="Si" id="Factura">  Facturado </label></div>                                                                                                               
                                                        
                                                 </div>    
                                             </div>
@@ -169,6 +171,7 @@
     <script src="js/plugins/footable/footable.all.min.js"></script>
     <script src="js/alertifyjs/alertify.js"></script>
     <script src="js/alertifyjs/alertify.min.js"></script>
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
     <script>
         $(document).ready(function() {
 
@@ -198,6 +201,14 @@
             });
         });
     </script>
+     <script>
+            $(document).ready(function () {
+                $('.i-checks').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green',
+                });
+            });
+        </script>
 </body>
 
 <!-- Mirrored from webapplayers.com/inspinia_admin-v2.7.1/dashboard_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Oct 2017 15:24:34 GMT -->
