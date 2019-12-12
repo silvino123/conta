@@ -215,48 +215,10 @@ mysqli_close($con);
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td><span class="label label-warning">Pendiente</span></td>
-                                                <td><i class="fa fa-clock-o"></i> 11:20pm</td>
-                                                <td>Samantha</td>
-                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 24% </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="label label-danger">Cancelado</span> </td>
-                                                <td><i class="fa fa-clock-o"></i> 10:40am</td>
-                                                <td>Monica</td>
-                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 66% </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="label label-warning">Pendiente</span> </td>
-                                                <td><i class="fa fa-clock-o"></i> 01:30pm</td>
-                                                <td>John</td>
-                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 54% </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="label label-warning">Pendiente</span></td>
-                                                <td><i class="fa fa-clock-o"></i> 02:20pm</td>
-                                                <td>Agnes</td>
-                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 12% </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="label label-warning">Pendiente</span> </td>
-                                                <td><i class="fa fa-clock-o"></i> 09:40pm</td>
-                                                <td>Janet</td>
-                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 22% </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="label label-primary">Terminado</span> </td>
-                                                <td><i class="fa fa-clock-o"></i> 04:10am</td>
-                                                <td>Amelia</td>
-                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 66% </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="label label-warning">Pendiente</span> </td>
-                                                <td><i class="fa fa-clock-o"></i> 12:08am</td>
-                                                <td>Damian</td>
-                                                <td class="text-navy"> <i class="fas fa-level-up-alt"></i> 23% </td>
-                                            </tr>
+                                            <?php  
+                            require('ContenidoProyectos.php');
+                            ?> 
+                            
                                             </tbody>
                                         </table>
                                     </div>
