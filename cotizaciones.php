@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sycsoft | Proyectos</title>
+    <title>Sycsoft | Cotizaciones</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -35,14 +35,14 @@
         <div id="page-wrapper" class="gray-bg">  
             <?php include 'Nav.html'; ?>  
                 <div class="wrapper wrapper-content">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#proyecto">Agregar Proyecto</button>
+                <a class="btn btn-primary" href="NuevaCotizacion.php">Nueva Cotizacion</a>
                 <br>
                 <br>
                 <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h3>Proyectos Registrados</h3>
+                            <h3>Cotizaciones Registradas</h3>
 
                             
                         </div>
@@ -85,87 +85,9 @@
 
         </div>
 </div>
-<div class="modal inmodal" id="proyecto" tabindex="-1" role="dialog"  aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content animated fadeIn">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        
-                                            <h4 class="modal-title">Registrar Proyecto</h4>
-                                           
-                                        </div>
-                                        <div class="modal-body">
-                                        
-                                        <form class="form-horizontal" method="POST" action="RegistrarProyecto.php">
-                                            <div class="row">
-                                                <div class="col-lg-12 b-r">
-                                                    
-                                                        <div class="form-group"><label>Nombre</label> <input type="text" placeholder="Nombre" class="form-control" id="Nombre" name="Nombre" required=""maxlength="100"></div>
-                                                        
-                                                        <div class="form-group"><label>Estatus</label> <select class="select2_demo_1 form-control" id="Estatus" name="Estatus">
-                                                        <option value="">Seleccione un Estatus</option>
-                                                        <option value="Aceptado">Aceptado</option>
-                                                            <option value="Desarrollo">En Desarollo</option>
-                                                            <option value="cancelado">Cancelado</option>
-                                                                <option value="Terminado">Terminado</option>
-                                                                 
-                                                                   </select></div>
-                                                        <div class="form-group"><label>Fecha de Inicio</label> <input type="date"  class="form-control" id="FechaInicio" name="FechaInicio" required="" ></div>
-                                                        <div class="form-group"><label>Fecha de Entrega</label> <input type="date"  class="form-control" id="FechaEntrega" name="FechaEntrega" required="" ></div>
-                                                        <div class="form-group"><label>Responsable</label> <input type="text" placeholder="Responsable"   class="form-control" id="Responsable" name="Responsable" required=""maxlength="50"></div>
-                                                        <div class="form-group"><label>Porcentaje</label> <input type="number"  class="form-control" id="Porcentaje" name="Procentaje"  ></div>                                                                                                        
-                                                        <div class="form-group"><label>Cliente</label> <select class="select2_demo_1 form-control" id="Cliente" name="Cliente">
-                                                        <option value="">Selecciona un Cliente</option>
-                                                        <?php 
-                                                         require('conec.php');
 
-                                                         $rs = mysqli_query($con, "SELECT * FROM clientes");
-
-                                                           while($row = mysqli_fetch_array($rs)){
-     
-                                               echo"<option value=".$row['id_cliente'] ."  >". $row['Nombre'] ."</option>";
-                         
-                                                                    }
-
-                                                      mysqli_close($con);
-                                                                            ?>     
-                                                                 
-                                                                   </select></div>
-                                                </div>    
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Registrar</button>
-                                        </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>   
                             
-                            <div class="modal inmodal" id="EditarProyecto" tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="modal-dialog">
-                                <div class="modal-content animated bounceInRight">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                            <i class="fas fa-chart-line modal-icon"></i>
-                                            <h4 class="modal-title">Editar Proyecto</h4>
-                                            
-                                        </div>
-                                        <div class="modal-body">
-                                        <form class="form-horizontal" method="post" action="EditarProyecto.php">
-                                        <div class="fetched-data"></div> 
-                                        
-                                        
-                                        </div>
-                                        <div class="modal-footer">
-                                            
-                                            <button type="submit" class="btn btn-primary">Editar</button>
-                                        </div>
-                                         
-                                    </div>
-                                    </form>
-                                </div>
-                            </div>
+                           
 
     <!-- Mainly scripts -->
     <script src="js/jquery-3.1.1.min.js"></script>
@@ -209,6 +131,16 @@
     <script src="js/alertifyjs/alertify.js"></script>
     <script src="js/alertifyjs/alertify.min.js"></script>
     <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
     <script>
         $(document).ready(function() {
 
