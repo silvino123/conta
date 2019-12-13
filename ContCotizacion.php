@@ -6,7 +6,7 @@ $consulta=mysqli_query($con,"SELECT * from cotizaciones");
         while($row = mysqli_fetch_array($consulta)){
            
             echo "<tr id='delete".$row['id_cotizacion']."'>";
-            echo "<td>" . $row['id_cotizacion'] .  "</td>"; 
+            echo "<td>SYC" . $row['id_cotizacion'] .  "</td>"; 
             echo "<td>" . $row['Fecha'] .  "</td>"; 
             echo "<td>" . $row['Cliente'] .  "</td>"; 
              echo "<td>" . $row['Vigencia'] .  "</td>"; 

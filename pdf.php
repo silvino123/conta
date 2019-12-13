@@ -11,7 +11,7 @@
   use Dompdf\Dompdf;
       $dompdf = new DOMPDF();
       $dompdf->load_html($cod);
-      $dompdf->setPaper(array (0,0,800,700), 'landscape');
+      $dompdf->setPaper(array (0,0,800,800), 'landscape');
       $dompdf->render();
       $pdf = $dompdf->output();
       $filename = "Cotizacion.pdf";

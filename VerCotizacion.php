@@ -85,7 +85,8 @@ require('conec.php');
                                 
                                 <div class="col-sm-7 text-right" style="vertical-align : middle;text-align:right;margin-top:-30px">
                                   <h1 class="text-gray"><b>Cotización</b></h1> 
-                                  <span><strong>Fecha:</strong> <?php  echo $fecha?></span>
+                                  <span><strong>Fecha:</strong> <?php  echo $fecha?></span><br>
+                                  <span><strong>Folio: </strong><b style="color:red">SYC<?php  echo $id_cotizacion?></b></span>
                                    <input type="number" id="id_cotizacion" name="id_cotizacion" style="border:none;display:none" required="" bloked value="<?php  echo $id_cotizacion?>"/></span>
                                  <br>
                                     <address>
@@ -139,27 +140,41 @@ require('conec.php');
                                         <td  colspan="1" style="vertical-align : middle;text-align:right" ><?php  echo $total ?></td>
                                        
                                     </tr>
-
+                                    <tr >
+                                    <td colspan="4"></td>
+                                    </tr>
+                                    <tr >
+                                    <td colspan="4"></td>
+                                    </tr>
+                                    <tr >
+                                    <td colspan="4"></td>
+                                    </tr>
+                                    <tr >
+                                    <td colspan="4"></td>
+                                    </tr>
+                                    <tr >
+                                    <td colspan="1"></td>
+                                    <td colspan="1"></td>
+                                    <td style="vertical-align : middle;text-align:right" colspan="1"></td>
+                                    <td style="vertical-align : middle;text-align:right" colspan="1"><strong>Sub Total: $ </strong><?php  echo $subtotal ?></td>
+                                </tr>
+                                <tr>
+                                <td colspan="1"></td>
+                                <td></td>
+                                    <td></td>
+                                    <td style="vertical-align : middle;text-align:right"><strong>IVA: $ </strong><?php  echo $iva ?></td>
+                                </tr>
+                                <tr>
+                                <td colspan="1"></td>
+                                <td></td>
+                                    <td></td>
+                                    <td style="vertical-align : middle;text-align:right"><strong>TOTAL: $</strong><?php  echo $totalneto ?></td>
+                                </tr>
                                     </tbody>
                                 </table>
                             </div><!-- /table-responsive -->
 
-                            <table style="vertical-align : middle;text-align:right" class="table invoice-total" >
-                                <tbody>
-                                <tr style="vertical-align : middle;text-align:right">
-                                    <td style="vertical-align : middle;text-align:right"><strong>Sub Total: $</strong></td>
-                                    <td style="vertical-align : middle;text-align:right"><?php  echo $subtotal ?></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>IVA: $</strong></td>
-                                    <td><?php  echo $iva ?></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>TOTAL: $</strong></td>
-                                    <td><?php  echo $totalneto ?></td>
-                                </tr>
-                                </tbody>
-                            </table>
+                           
                             <div class=" text-left">
                                <table >
                                <thead>
@@ -171,7 +186,7 @@ require('conec.php');
                                     <tbody>
                                     <tr>
                                         
-                                        <td  colspan="3" class="text-center">Método de Pago</td>
+                                        <td  colspan="3" class="text-center" style="vertical-align : middle;text-align:center">Método de Pago</td>
                                         
                                         
                                     </td>
@@ -215,9 +230,9 @@ require('conec.php');
                                </table>
                             </div>
                             
-                            
                             <br>
-                            
+                            <br>
+                            <br>
                             <div class="text-center">
                                <h3 style="vertical-align : middle;text-align:center"><b>¡Gracias por hacer negocios!</b></h3>
                             </div>
