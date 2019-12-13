@@ -50,7 +50,7 @@
                                         Calle López del Castillo # 30 Local 2 esquina callejón Campeche <br>
                                         Col.Olivares, 83180 Hermosillo, Sonora<br>
                                         <abbr ><strong>Telefono:</strong> </abbr>662276409, 6621039509<br>
-                                        <span><strong>Vigencia:</strong> <input type="date" id="Vigencia" name="Vigencia"/></span>
+                                        <span><strong>Vigencia:</strong> <input type="date" id="Vigencia" name="Vigencia"style="border:none"/></span>
                                         
                                        
                                     </address>
@@ -59,11 +59,11 @@
                                 
                                 <div class="col-sm-7 text-right">
                                   <h1 class="text-gray">Cotización</h1> 
-                                  <span><strong>Fecha:</strong> <input type="date" id="fecha" name="fecha"/></span>
+                                  <span><strong>Fecha:</strong> <input type="date" id="fecha" name="fecha" style="border:none"/></span>
                                 
                                  <br>
                                     <address>
-                                    <span><strong>Solicitado por:</strong> <input type="text" id="cliente" name="cliente"/></span>
+                                    <span><strong>Solicitado por:</strong> <input type="text" id="cliente" name="cliente"style="border:none"/></span>
                                         
                                     </address>
                                   
@@ -87,7 +87,7 @@
                                     <tr>
                                         <td colspan="4">
                                         <div >
-                                        <textarea id="Descripcion" class=" form-control" rows="5"></textarea>
+                                        <textarea id="Descripcion" class=" form-control" rows="5" style="border:none"></textarea>
                                            
                                             </div> 
                                     </td>
@@ -103,7 +103,7 @@
                                     </tr>
                                     <tr>
                                         
-                                        <td  colspan="1">3</td>
+                                        <td  colspan="1" ><input type="number" style="border:none"/></td>
                                         <td  colspan="2" class="text-center" style="vertical-align : middle;text-align:center">$420.00</td>
                                         <td  colspan="1">$193.20</td>
                                        
