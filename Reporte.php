@@ -213,6 +213,7 @@ mysqli_close($con);
                                 <table class="table table-hover no-margins">
                                             <thead>
                                             <tr>
+                                            <th>Proyecto</th>
                                                 <th>Estatus</th>
                                                 <th>Fecha de Entrega</th>
                                                 <th>Responsables</th>

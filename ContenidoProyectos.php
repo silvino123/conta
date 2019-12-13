@@ -7,6 +7,7 @@ $consulta=mysqli_query($con,"SELECT * from proyectos WHERE  MONTH(FechaEntrega)=
         while($row = mysqli_fetch_array($consulta)){
          
             echo "<tr id='delete".$row['id_proyecto']."'>";
+            echo "<td>" . $row['Nombre'] .  "</td>";
             if($row['Estatus']=="Aceptado"){
                 echo "<td> <span class='label label-info'>". $row['Estatus'] .  "</span></td>";
             }
