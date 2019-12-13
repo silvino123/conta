@@ -1,6 +1,11 @@
 <?php 
 require("conec.php");
 session_start();
+ if (!isset( $_SESSION["Nombre"])){
+    
+    header("location:login.html");
+  
+  }
 $mesActual=date("m");
 $añoActual=date("Y");
 $NombreMes= date("F");

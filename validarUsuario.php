@@ -12,7 +12,7 @@ $row    = mysqli_fetch_assoc($qs);
 //     header("location: login.html");
 // }
          $id  = $row['id_usuario'];
-         $nombre= $row['Correo'];
+         $nombre= $row['Nombre'];
          $password = $row['Contrasena'];
         
         
