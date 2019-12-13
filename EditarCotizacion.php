@@ -1,4 +1,29 @@
-<!DOCTYPE html>
+<?php 
+
+$id=$_GET['id'];
+require('conec.php');
+
+    $rs = mysqli_query($con, "SELECT * FROM cotizaciones where id_cotizacion ='$id'");
+    $row = mysqli_fetch_array($rs);
+    $id_cotizacion=$row['id_cotizacion'];
+    $fecha=$row['Fecha'];
+    $cliente =$row['Cliente'];
+    $vigencia =$row['Vigencia'];
+    $trabajo=$row['Trabajo'];
+    $cantidad=$row['Cantidad'];
+    $descripcion=$row['Descripcion'];
+    $total=$row['Total'];
+    $subtotal=$row['Subtotal'];
+    $iva=$row['Iva'];
+    $totalneto=$row['Totalneto'];
+    $inicio=$row['Inicio'];
+    $avance=$row['Avance'];
+    $final=$row['Final'];
+    $cotizado=$row['Cotizado'];
+    $nota=$row['Nota'];
+    
+    ?>
+    <!DOCTYPE html>
 <html>
 
 
@@ -39,11 +64,11 @@
                 <br>
                 <br>
                 <div class="row">
-                <div class="col-lg-12" id="zonas">
+                <div class="col-lg-12">
                 <div class="wrapper wrapper-content animated fadeInRight">
                     <div class="ibox-content p-xl">
                             <div class="row">
-                            <form  method="POST" action="RegistrarCotizacion.php">
+                            <form  method="POST" action="EditCotizacion.php">
                                 <div class="col-sm-5">
                                    <img src="img/el.png" alt="logo">
                                     <address>
@@ -51,8 +76,8 @@
                                         Calle López del Castillo # 30 Local 2 esquina callejón Campeche <br>
                                         Col.Olivares, 83180 Hermosillo, Sonora<br>
                                         <abbr ><strong>Telefono:</strong> </abbr>662276409, 6621039509<br>
-                                        <span><strong>Vigencia:</strong> <input type="date" id="Vigencia" name="Vigencia"style="border:none" required=""/></span>
-                                        <input type='text' id="htmlgenerado" name="htmlgenerado" style="display:none"/>
+                                        <span><strong>Vigencia:</strong> <input type="date" id="Vigencia" name="Vigencia"style="border:none" required="" value="<?php  echo $vigencia?>"/></span>
+                                        
                                        
                                     </address>
                                    
@@ -60,11 +85,11 @@
                                 
                                 <div class="col-sm-7 text-right">
                                   <h1 class="text-gray"><b>Cotización</b></h1> 
-                                  <span><strong>Fecha:</strong> <input type="date" id="Fecha" name="Fecha" style="border:none" required=""/></span>
-                                
+                                  <span><strong>Fecha:</strong> <input type="date" id="Fecha" name="Fecha" style="border:none" required="" value="<?php  echo $fecha?>"/></span>
+                                   <input type="number" id="id_cotizacion" name="id_cotizacion" style="border:none;display:none" required="" value="<?php  echo $id_cotizacion?>"/></span>
                                  <br>
                                     <address>
-                                    <span><strong>Solicitado por:</strong> <input type="text" id="Cliente" name="Cliente"style="border:none" required=""/></span>
+                                    <span><strong>Solicitado por:</strong> <input type="text" id="Cliente" name="Cliente"style="border:none" required="" value="<?php  echo $cliente?>"/></span>
                                         
                                     </address>
                                   
@@ -88,7 +113,7 @@
                                     <tr>
                                         <td colspan="4">
                                         <div >
-                                        <textarea id="Trabajo" name="Trabajo" class=" form-control" rows="7" style="border:none" required=""></textarea>
+                                        <textarea id="Trabajo" name="Trabajo" class=" form-control" rows="7" style="border:none" required=""  ><?php  echo $trabajo ?></textarea>
                                            
                                             </div> 
                                     </td>
@@ -104,14 +129,14 @@
                                     </tr>
                                     <tr>
                                         
-                                        <td  colspan="1" ><input type="number" id="Cantidad" name="Cantidad" style="border:none" required=""/></td>
+                                        <td  colspan="1" ><input type="number" id="Cantidad" name="Cantidad" style="border:none" required=""value="<?php  echo $cantidad ?>"/></td>
                                         <td  colspan="2" class="text-center" style="vertical-align : middle;text-align:center">
                                         <div >
-                                        <textarea id="Descripcion" name="Descripcion" class=" form-control" rows="8" style="border:none" required=""></textarea>
+                                        <textarea id="Descripcion" name="Descripcion" class=" form-control" rows="8" style="border:none" required="" ><?php  echo $descripcion ?></textarea>
                                            
                                             </div>
                                     </td>
-                                        <td  colspan="1"><input type="number" style="text-align: right;border:none" id="Total" name="Total"  required=""/></td>
+                                        <td  colspan="1"><input type="number" style="text-align: right;border:none" id="Total" name="Total"  required="" value="<?php  echo $total ?>"/></td>
                                        
                                     </tr>
 
@@ -123,15 +148,15 @@
                                 <tbody>
                                 <tr>
                                     <td><strong>Sub Total: $</strong></td>
-                                    <td><input type="number" style="text-align: right;border:none" id="Subtotal" name="Subtotal" bloked/></td>
+                                    <td><input type="number" style="text-align: right;border:none" id="Subtotal" name="Subtotal" bloked value="<?php  echo $subtotal ?>"/></td>
                                 </tr>
                                 <tr>
                                     <td><strong>IVA: $</strong></td>
-                                    <td><input type="number" style="text-align: right;border:none" id="Iva" name="Iva" bloked/></td>
+                                    <td><input type="number" style="text-align: right;border:none" id="Iva" name="Iva" bloked value="<?php  echo $iva ?>"/></td>
                                 </tr>
                                 <tr>
                                     <td><strong>TOTAL: $</strong></td>
-                                    <td><input type="number" style="text-align: right;border:none" id="Totalneto" name="Totalneto" bloked/></td>
+                                    <td><input type="number" style="text-align: right;border:none" id="Totalneto" name="Totalneto" bloked value="<?php  echo $totalneto ?>"/></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -154,28 +179,28 @@
                                         
                                         <td  colspan="2" >30% Inicio del Proyecto $</td>
                                         
-                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="inicio" name="inicio" bloked/> </td>
+                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="inicio" name="inicio" bloked value="<?php  echo $inicio?>"/> </td>
                         
                                     </tr>
                                     <tr>
                                         
                                         <td  colspan="2" >40% Dividido entre los entregables  $</td>
                                         
-                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="avance" name="avance" bloked/> </td>
+                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="avance" name="avance" bloked value="<?php  echo $avance?>"/> </td>
                         
                                     </tr>
                                     <tr>
                                         
                                         <td  colspan="2" >30% Final del proyecto $</td>
                                         
-                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="final" name="final" bloked/> </td>
+                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="final" name="final" bloked value="<?php  echo $final?>"/> </td>
                         
                                     </tr>
                                     <tr>
                                         
                                         <td  colspan="2" class="text-center" ><b>Total Cotizado $<b></td>
                                         
-                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="cotizado" name="cotizado" bloked/> </td>
+                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="cotizado" name="cotizado" bloked value="<?php  echo $cotizado?>"/> </td>
                         
                                     </tr>
                                     <br>
@@ -183,7 +208,7 @@
                                         
                                        
                                         
-                                        <td  colspan="3" ><b>Nota:</b> <input type="text" style="text-align: left;border:none;width:300px" id="nota" name="nota"> </td>
+                                        <td  colspan="3" ><b>Nota:</b> <input type="text" style="text-align: left;border:none;width:300px" id="nota" name="nota" value="<?php  echo $nota?>"> </td>
                         
                                     </tr>
                                     </tbody>
@@ -191,11 +216,10 @@
                             </div>
                             
                             <div class="text-right">
-                                <button class="btn btn-primary" type="submit">Guardar</button>
+                                <button class="btn btn-primary" type="submit">Editar</button>
                             </div>
                             <br>
                             </form>
-                            
                             <div class="text-center">
                                <h3><b>¡Gracias por hacer negocios!</b></h3>
                             </div>
@@ -285,14 +309,7 @@ function autoCompleteNew(e) {
      $('#cotizado').val(total);
 }
 </script>
- <script>
-  $( document ).ready(function() {
-    var html = document.getElementById('zonas').innerHTML;
-    document.getElementById('htmlgenerado').value = html;
     
-});
-
-  </script>   
 </body>
 
 </html>

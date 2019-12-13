@@ -63,19 +63,16 @@ if (!isset( $_SESSION["Nombre"])){
                                 <thead>
                                 <tr style="background-color:#1c84c6;color:#fff">
                                     <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Estatus</th>
-                                    <th >Fecha de Inicio</th>
-                                    <th >Fecha de Entrega</th>
-                                    <th >Responsable</th>
-                                    <th >Porcentaje de avance</th>
+                                    <th>Facha</th>
                                     <th >Cliente</th>
-                                    <th  >Acciones</th>
+                                    <th>Vigencia</th>
+                                    <th >Total</th>
+                                    <th >Acciones</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php  
-                            require('ContProyecto.php');
+                            require('ContCotizacion.php');
                                 ?>
                                 </tbody>
                                 <tfoot>

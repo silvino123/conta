@@ -1,4 +1,29 @@
-<!DOCTYPE html>
+<?php 
+
+$id=$_GET['id'];
+require('conec.php');
+
+    $rs = mysqli_query($con, "SELECT * FROM cotizaciones where id_cotizacion ='$id'");
+    $row = mysqli_fetch_array($rs);
+    $id_cotizacion=$row['id_cotizacion'];
+    $fecha=$row['Fecha'];
+    $cliente =$row['Cliente'];
+    $vigencia =$row['Vigencia'];
+    $trabajo=$row['Trabajo'];
+    $cantidad=$row['Cantidad'];
+    $descripcion=$row['Descripcion'];
+    $total=$row['Total'];
+    $subtotal=$row['Subtotal'];
+    $iva=$row['Iva'];
+    $totalneto=$row['Totalneto'];
+    $inicio=$row['Inicio'];
+    $avance=$row['Avance'];
+    $final=$row['Final'];
+    $cotizado=$row['Cotizado'];
+    $nota=$row['Nota'];
+    
+    ?>
+    <!DOCTYPE html>
 <html>
 
 
@@ -38,12 +63,12 @@
                 
                 <br>
                 <br>
-                <div class="row">
-                <div class="col-lg-12" id="zonas">
+                <div class="row" id="zonas">
+                <div class="col-lg-12">
                 <div class="wrapper wrapper-content animated fadeInRight">
-                    <div class="ibox-content p-xl">
+                    <div class="ibox-content p-xl" >
                             <div class="row">
-                            <form  method="POST" action="RegistrarCotizacion.php">
+                            
                                 <div class="col-sm-5">
                                    <img src="img/el.png" alt="logo">
                                     <address>
@@ -51,20 +76,20 @@
                                         Calle López del Castillo # 30 Local 2 esquina callejón Campeche <br>
                                         Col.Olivares, 83180 Hermosillo, Sonora<br>
                                         <abbr ><strong>Telefono:</strong> </abbr>662276409, 6621039509<br>
-                                        <span><strong>Vigencia:</strong> <input type="date" id="Vigencia" name="Vigencia"style="border:none" required=""/></span>
-                                        <input type='text' id="htmlgenerado" name="htmlgenerado" style="display:none"/>
+                                        <span><strong>Vigencia: </strong><?php  echo $vigencia?></span>
+                                        
                                        
                                     </address>
                                    
                                 </div>
                                 
-                                <div class="col-sm-7 text-right">
+                                <div class="col-sm-7 text-right" style="vertical-align : middle;text-align:right;margin-top:-30px">
                                   <h1 class="text-gray"><b>Cotización</b></h1> 
-                                  <span><strong>Fecha:</strong> <input type="date" id="Fecha" name="Fecha" style="border:none" required=""/></span>
-                                
+                                  <span><strong>Fecha:</strong> <?php  echo $fecha?></span>
+                                   <input type="number" id="id_cotizacion" name="id_cotizacion" style="border:none;display:none" required="" bloked value="<?php  echo $id_cotizacion?>"/></span>
                                  <br>
                                     <address>
-                                    <span><strong>Solicitado por:</strong> <input type="text" id="Cliente" name="Cliente"style="border:none" required=""/></span>
+                                    <span><strong>Solicitado por: </strong><?php  echo $cliente?></span>
                                         
                                     </address>
                                   
@@ -88,8 +113,8 @@
                                     <tr>
                                         <td colspan="4">
                                         <div >
-                                        <textarea id="Trabajo" name="Trabajo" class=" form-control" rows="7" style="border:none" required=""></textarea>
-                                           
+                                        
+                                       <p> <?php  echo $trabajo ?></p>
                                             </div> 
                                     </td>
                                        
@@ -98,20 +123,20 @@
                                     <tr style="background-color:#424242;color:#fff" >
                                         <td colspan="1" ><b>CANT</b></td>
                                         <td colspan="2" class="text-center"  style="color:#fff;vertical-align : middle;text-align:center" ><b>DESCRIPCION</b></td>
-                                        <td colspan="1"><b>TOTAL</b></td>
+                                        <td colspan="1" style="color:#fff;vertical-align : middle;text-align:right" ><b>TOTAL</b></td>
                                         
                                        
                                     </tr>
                                     <tr>
                                         
-                                        <td  colspan="1" ><input type="number" id="Cantidad" name="Cantidad" style="border:none" required=""/></td>
+                                        <td  colspan="1" ><?php  echo $cantidad ?></td>
                                         <td  colspan="2" class="text-center" style="vertical-align : middle;text-align:center">
                                         <div >
-                                        <textarea id="Descripcion" name="Descripcion" class=" form-control" rows="8" style="border:none" required=""></textarea>
-                                           
+                                       
+                                           <p><?php  echo $descripcion ?></p>
                                             </div>
                                     </td>
-                                        <td  colspan="1"><input type="number" style="text-align: right;border:none" id="Total" name="Total"  required=""/></td>
+                                        <td  colspan="1" style="vertical-align : middle;text-align:right" ><?php  echo $total ?></td>
                                        
                                     </tr>
 
@@ -119,19 +144,19 @@
                                 </table>
                             </div><!-- /table-responsive -->
 
-                            <table class="table invoice-total">
+                            <table style="vertical-align : middle;text-align:right" class="table invoice-total" >
                                 <tbody>
-                                <tr>
-                                    <td><strong>Sub Total: $</strong></td>
-                                    <td><input type="number" style="text-align: right;border:none" id="Subtotal" name="Subtotal" bloked/></td>
+                                <tr style="vertical-align : middle;text-align:right">
+                                    <td style="vertical-align : middle;text-align:right"><strong>Sub Total: $</strong></td>
+                                    <td style="vertical-align : middle;text-align:right"><?php  echo $subtotal ?></td>
                                 </tr>
                                 <tr>
                                     <td><strong>IVA: $</strong></td>
-                                    <td><input type="number" style="text-align: right;border:none" id="Iva" name="Iva" bloked/></td>
+                                    <td><?php  echo $iva ?></td>
                                 </tr>
                                 <tr>
                                     <td><strong>TOTAL: $</strong></td>
-                                    <td><input type="number" style="text-align: right;border:none" id="Totalneto" name="Totalneto" bloked/></td>
+                                    <td><?php  echo $totalneto ?></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -154,28 +179,28 @@
                                         
                                         <td  colspan="2" >30% Inicio del Proyecto $</td>
                                         
-                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="inicio" name="inicio" bloked/> </td>
+                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><?php  echo $inicio?> </td>
                         
                                     </tr>
                                     <tr>
                                         
                                         <td  colspan="2" >40% Dividido entre los entregables  $</td>
                                         
-                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="avance" name="avance" bloked/> </td>
+                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><?php  echo $avance?> </td>
                         
                                     </tr>
                                     <tr>
                                         
                                         <td  colspan="2" >30% Final del proyecto $</td>
                                         
-                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="final" name="final" bloked/> </td>
+                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><?php  echo $final?> </td>
                         
                                     </tr>
                                     <tr>
                                         
                                         <td  colspan="2" class="text-center" ><b>Total Cotizado $<b></td>
                                         
-                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><input type="number" style="text-align: right;border:none" id="cotizado" name="cotizado" bloked/> </td>
+                                        <td  colspan="1" class="text-center" style="vertical-align : middle;text-align:center"><?php  echo $cotizado?> </td>
                         
                                     </tr>
                                     <br>
@@ -183,26 +208,33 @@
                                         
                                        
                                         
-                                        <td  colspan="3" ><b>Nota:</b> <input type="text" style="text-align: left;border:none;width:300px" id="nota" name="nota"> </td>
+                                        <td  colspan="3" ><b>Nota:</b><?php  echo $nota?> </td>
                         
                                     </tr>
                                     </tbody>
                                </table>
                             </div>
                             
-                            <div class="text-right">
-                                <button class="btn btn-primary" type="submit">Guardar</button>
-                            </div>
+                            
                             <br>
-                            </form>
                             
                             <div class="text-center">
-                               <h3><b>¡Gracias por hacer negocios!</b></h3>
+                               <h3 style="vertical-align : middle;text-align:center"><b>¡Gracias por hacer negocios!</b></h3>
                             </div>
                         </div>
                 </div>
             </div>
 
+            </div>
+            <div class="row">
+            <div class="col-lg-12">
+            <div class="text-right">
+                            <form method="post" action="pdf.php">
+                            <input type='text' id="htmlgenerado" name="htmlgenerado" style="display:none"/>
+                            <button class="btn btn-primary" type="submit"><i class="fa fa-download"></i> generar PDF</button>
+                            </form>
+                            </div>    
+                            </div>
             </div>
                 </div>
 
@@ -285,14 +317,14 @@ function autoCompleteNew(e) {
      $('#cotizado').val(total);
 }
 </script>
- <script>
+     <script>
   $( document ).ready(function() {
     var html = document.getElementById('zonas').innerHTML;
     document.getElementById('htmlgenerado').value = html;
     
 });
 
-  </script>   
+  </script>
 </body>
 
 </html>
