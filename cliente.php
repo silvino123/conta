@@ -109,9 +109,9 @@ if (!isset( $_SESSION["Nombre"])){
                                                     
                                                         <div class="form-group"><label>Nombre</label> <input type="text" placeholder="Nombre" class="form-control" id="Nombre" name="Nombre" required=""maxlength="100"></div>
                                                         <div class="form-group"><label>Direccion</label> <input type="text" placeholder="Direccion" class="form-control" id="Direccion" name="Direccion" required=""maxlength="200"></div>
-                                                        <div class="form-group"><label>Telefono</label> <input type="tel"  class="form-control" id="Telefono" name="Telefono" required="" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"maxlength="10"></div>
+                                                        <div class="form-group"><label>Telefono</label> <input type="tel"  class="form-control" id="Telefono" name="Telefono" required="" maxlength="10"></div>
                                                         <div class="form-group"><label>Correo</label> <input type="email" placeholder="Correo"   class="form-control" id="Correo" name="Correo" required=""maxlength="50"></div>
-                                                        <div class="form-group"><label>RFC</label> <input type="text" placeholder="RFC"  class="form-control" id="Rfc" name="Rfc" required="" onkeyup="javascript:this.value=this.value.toUpperCase();"maxlength="13" pattern="/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/"></div>                                                                                                        
+                                                        <div class="form-group"><label>RFC</label> <input type="text" placeholder="RFC"  class="form-control" id="Rfc" name="Rfc" required="" onkeyup="javascript:this.value=this.value.toUpperCase();"maxlength="13"></div>                                                                                                        
                                                        
                                                 </div>    
                                             </div>

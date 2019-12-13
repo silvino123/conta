@@ -50,7 +50,7 @@
                                         Calle López del Castillo # 30 Local 2 esquina callejón Campeche <br>
                                         Col.Olivares, 83180 Hermosillo, Sonora<br>
                                         <abbr ><strong>Telefono:</strong> </abbr>662276409, 6621039509<br>
-                                        <span><strong>Vigencia:</strong> <input type="date" id="Vigencia" name="Vigencia"style="border:none"/></span>
+                                        <span><strong>Vigencia:</strong> <input type="date" id="Vigencia" name="Vigencia"style="border:none" required=""/></span>
                                         
                                        
                                     </address>
@@ -58,19 +58,19 @@
                                 </div>
                                 
                                 <div class="col-sm-7 text-right">
-                                  <h1 class="text-gray">Cotización</h1> 
-                                  <span><strong>Fecha:</strong> <input type="date" id="fecha" name="fecha" style="border:none"/></span>
+                                  <h1 class="text-gray"><b>Cotización</b></h1> 
+                                  <span><strong>Fecha:</strong> <input type="date" id="Fecha" name="Fecha" style="border:none" required=""/></span>
                                 
                                  <br>
                                     <address>
-                                    <span><strong>Solicitado por:</strong> <input type="text" id="cliente" name="cliente"style="border:none"/></span>
+                                    <span><strong>Solicitado por:</strong> <input type="text" id="Cliente" name="Cliente"style="border:none" required=""/></span>
                                         
                                     </address>
                                   
                                 </div>
                                 <div class="col-lg-12">
                                 <p>
-                                <b> Nota: Esta contización es válida hasta la fecha de vigencia, pasada la fecha se tendrá que realizar la cotización nuevamente </b>
+                                <b> Nota: Esta cotización es válida hasta la fecha de vigencia, pasada la fecha se tendrá que realizar la cotización nuevamente </b>
                                     </p>
                                  </div>
                             </div>
@@ -79,7 +79,7 @@
                                 <table class="table invoice-table">
                                     <thead>
                                     
-                                        <th colspan="4" class="text-center" style="background-color:#9e9e9e;color:#fff;vertical-align : middle;text-align:center" >Trabajo</th>
+                                        <th colspan="4" class="text-center" style="background-color:#424242;color:#fff;vertical-align : middle;text-align:center" >TRABAJO</th>
                                         
                                   
                                     </thead>
@@ -87,25 +87,30 @@
                                     <tr>
                                         <td colspan="4">
                                         <div >
-                                        <textarea id="Descripcion" class=" form-control" rows="5" style="border:none"></textarea>
+                                        <textarea id="Trabajo" name="Trabajo" class=" form-control" rows="7" style="border:none" required=""></textarea>
                                            
                                             </div> 
                                     </td>
                                        
                                         
                                     </tr>
-                                    <tr style="background-color:#9e9e9e;color:#fff" >
-                                        <td colspan="1">Cant</td>
-                                        <td colspan="2" class="text-center"  style="background-color:#9e9e9e;color:#fff;vertical-align : middle;text-align:center" >Descripcion</td>
-                                        <td colspan="1">Total</td>
+                                    <tr style="background-color:#424242;color:#fff" >
+                                        <td colspan="1" ><b>CANT</b></td>
+                                        <td colspan="2" class="text-center"  style="color:#fff;vertical-align : middle;text-align:center" ><b>DESCRIPCION</b></td>
+                                        <td colspan="1"><b>TOTAL</b></td>
                                         
                                        
                                     </tr>
                                     <tr>
                                         
-                                        <td  colspan="1" ><input type="number" style="border:none"/></td>
-                                        <td  colspan="2" class="text-center" style="vertical-align : middle;text-align:center">$420.00</td>
-                                        <td  colspan="1">$193.20</td>
+                                        <td  colspan="1" ><input type="number" id="Cantidad" name="Cantidad" style="border:none" required=""/></td>
+                                        <td  colspan="2" class="text-center" style="vertical-align : middle;text-align:center">
+                                        <div >
+                                        <textarea id="Descripcion" name="Descripcion" class=" form-control" rows="8" style="border:none" required=""></textarea>
+                                           
+                                            </div>
+                                    </td>
+                                        <td  colspan="1"><input type="number" style="text-align: right;border:none" id="Total" name="Total"  required=""/></td>
                                        
                                     </tr>
 
@@ -117,15 +122,15 @@
                                 <tbody>
                                 <tr>
                                     <td><strong>Sub Total :</strong></td>
-                                    <td>$1026.00</td>
+                                    <td><input type="number" style="text-align: right;border:none" disabled/></td>
                                 </tr>
                                 <tr>
                                     <td><strong>IVA:</strong></td>
-                                    <td>$235.98</td>
+                                    <td><input type="number" style="text-align: right;border:none" disabled/></td>
                                 </tr>
                                 <tr>
                                     <td><strong>TOTAL :</strong></td>
-                                    <td>$1261.98</td>
+                                    <td><input type="number" style="text-align: right;border:none" disabled/></td>
                                 </tr>
                                 </tbody>
                             </table>
