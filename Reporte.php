@@ -1,6 +1,6 @@
 <?php 
 require("conec.php");
-  
+session_start();
 $mesActual=date("m");
 $añoActual=date("Y");
 $NombreMes= date("F");
